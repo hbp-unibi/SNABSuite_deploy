@@ -1,0 +1,358 @@
+[
+    {
+        "model": {
+            "description": "SimpleWTA: A simple Winner-Takes-All network. Every population represents a winner, inhibition is directly between the populations.", 
+            "name": "SimpleWTA"
+        }, 
+        "tasks": [
+            {
+                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm} SimpleWTA 0", 
+                "name": "Single Core/Smallest Network"
+            }
+        ]
+    }, 
+    {
+        "model": {
+            "description": "Lateral Inhibition Winner-Takes-All: A centered inhibitory population suppresses all Winner populations.", 
+            "name": "LateralInhibWTA"
+        }, 
+        "tasks": [
+            {
+                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} LateralInhibWTA 0", 
+                "name": "Single Core/Smallest Network"
+            }
+        ]
+    }, 
+    {
+        "model": {
+            "description": "All Winner populations are mirrored by an inhibitory population, which suppresses all other (besides their own) winner population.", 
+            "name": "MirrorInhibWTA"
+        }, 
+        "tasks": [
+            {
+                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} MirrorInhibWTA 0", 
+                "name": "Single Core/Smallest Network"
+            }
+        ]
+    }, 
+    {
+        "model": {
+            "description": "The aim of this SNAB is to measure the bandwidth between neuron populations. Therefore, taking parameters from the OutputFrequency benchmarks, a single continously spiking neuron is connected to a population of neurons. The number of spikes of the population is measured and taken as the benchmark measure. ", 
+            "name": "SingleMaxFreqToGroup"
+        }, 
+        "tasks": [
+            {
+                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} SingleMaxFreqToGroup 0", 
+                "name": "Single Core/Smallest Network"
+            }, 
+            {
+                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} SingleMaxFreqToGroup 1", 
+                "name": "Single Chip"
+            }, 
+            {
+                "command": "./benchmark  {system=nest,spiNNaker} SingleMaxFreqToGroup 2", 
+                "name": "Small System"
+            }, 
+            {
+                "command": "./benchmark  {system=spiNNaker} SingleMaxFreqToGroup 3", 
+                "name": "Large System"
+            }
+        ]
+    }, 
+    {
+        "model": {
+            "description": "Identical to GroupMaxFreqToGroup, but using the FixedProbability connector and allowing different number of input neurons", 
+            "name": "GroupMaxFreqToGroupProb"
+        }, 
+        "tasks": [
+            {
+                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} GroupMaxFreqToGroupProb 0", 
+                "name": "Single Core/Smallest Network"
+            }, 
+            {
+                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm} GroupMaxFreqToGroupProb 1", 
+                "name": "Single Chip"
+            }, 
+            {
+                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm} GroupMaxFreqToGroupProb 2", 
+                "name": "Small System"
+            }, 
+            {
+                "command": "./benchmark  {system=spiNNaker} GroupMaxFreqToGroupProb 3", 
+                "name": "Large System"
+            }
+        ]
+    }, 
+    {
+        "model": {
+            "description": "Identical to GroupMaxFreqToGroup, but using the AllToAll connector and allowing different number of input neurons", 
+            "name": "GroupMaxFreqToGroupAllToAll"
+        }, 
+        "tasks": [
+            {
+                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} GroupMaxFreqToGroupAllToAll 0", 
+                "name": "Single Core/Smallest Network"
+            }, 
+            {
+                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm} GroupMaxFreqToGroupAllToAll 1", 
+                "name": "Single Chip"
+            }, 
+            {
+                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm} GroupMaxFreqToGroupAllToAll 2", 
+                "name": "Small System"
+            }, 
+            {
+                "command": "./benchmark  {system=spiNNaker} GroupMaxFreqToGroupAllToAll 3", 
+                "name": "Large System"
+            }
+        ]
+    }, 
+    {
+        "model": {
+            "description": "Similar to the benchmark before, this SNAB measures the bandwidth between neuron populations. Now, the input population firing at maximal frequency consist of the same number of neurons as the target population. The populations are connected via a OneToOne-Connector.", 
+            "name": "GroupMaxFreqToGroup"
+        }, 
+        "tasks": [
+            {
+                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} GroupMaxFreqToGroup 0", 
+                "name": "Single Core/Smallest Network"
+            }, 
+            {
+                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} GroupMaxFreqToGroup 1", 
+                "name": "Single Chip"
+            }, 
+            {
+                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm} GroupMaxFreqToGroup 2", 
+                "name": "Small System"
+            }, 
+            {
+                "command": "./benchmark  {system=spiNNaker} GroupMaxFreqToGroup 3", 
+                "name": "Large System"
+            }
+        ]
+    }, 
+    {
+        "model": {
+            "description": "Check the input bandwidth by injecting spikes per fixed fan out connection. Check if output neurons spike accordingly", 
+            "name": "MaxInputFixedOutConnector"
+        }, 
+        "tasks": [
+            {
+                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} MaxInputFixedOutConnector 0", 
+                "name": "Single Core/Smallest Network"
+            }, 
+            {
+                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} MaxInputFixedOutConnector 1", 
+                "name": "Single Chip"
+            }, 
+            {
+                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm} MaxInputFixedOutConnector 2", 
+                "name": "Small System"
+            }
+        ]
+    }, 
+    {
+        "model": {
+            "description": "Check the input bandwidth by injecting spikes per all to all connection. Check if output neurons spike accordingly", 
+            "name": "MaxInputAllToAll"
+        }, 
+        "tasks": [
+            {
+                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} MaxInputAllToAll 0", 
+                "name": "Single Core/Smallest Network"
+            }, 
+            {
+                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} MaxInputAllToAll 1", 
+                "name": "Single Chip"
+            }, 
+            {
+                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm} MaxInputAllToAll 2", 
+                "name": "Small System"
+            }, 
+            {
+                "command": "./benchmark  {system=spiNNaker} MaxInputAllToAll 3", 
+                "name": "Large System"
+            }
+        ]
+    }, 
+    {
+        "model": {
+            "description": "Check the input bandwidth by injecting spikes per fixed fan out connection. Check if output neurons spike accordingly", 
+            "name": "MaxInputFixedInConnector"
+        }, 
+        "tasks": [
+            {
+                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} MaxInputFixedInConnector 0", 
+                "name": "Single Core/Smallest Network"
+            }, 
+            {
+                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} MaxInputFixedInConnector 1", 
+                "name": "Single Chip"
+            }, 
+            {
+                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm} MaxInputFixedInConnector 2", 
+                "name": "Small System"
+            }, 
+            {
+                "command": "./benchmark  {system=spiNNaker} MaxInputFixedInConnector 3", 
+                "name": "Large System"
+            }
+        ]
+    }, 
+    {
+        "model": {
+            "description": "Check the input bandwidth by injecting spikes per one to one connection. Check if output neurons spike accordingly", 
+            "name": "MaxInputOneToOne"
+        }, 
+        "tasks": [
+            {
+                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} MaxInputOneToOne 0", 
+                "name": "Single Core/Smallest Network"
+            }, 
+            {
+                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} MaxInputOneToOne 1", 
+                "name": "Single Chip"
+            }, 
+            {
+                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm} MaxInputOneToOne 2", 
+                "name": "Small System"
+            }, 
+            {
+                "command": "./benchmark  {system=spiNNaker} MaxInputOneToOne 3", 
+                "name": "Large System"
+            }
+        ]
+    }, 
+    {
+        "model": {
+            "description": "", 
+            "name": "SetupTimeOneToOne"
+        }, 
+        "tasks": [
+            {
+                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} SetupTimeOneToOne 0", 
+                "name": "Single Core/Smallest Network"
+            }, 
+            {
+                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} SetupTimeOneToOne 1", 
+                "name": "Single Chip"
+            }, 
+            {
+                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm} SetupTimeOneToOne 2", 
+                "name": "Small System"
+            }, 
+            {
+                "command": "./benchmark  {system=spiNNaker} SetupTimeOneToOne 3", 
+                "name": "Large System"
+            }
+        ]
+    }, 
+    {
+        "model": {
+            "description": "", 
+            "name": "SetupTimeAllToAll"
+        }, 
+        "tasks": [
+            {
+                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} SetupTimeAllToAll 0", 
+                "name": "Single Core/Smallest Network"
+            }, 
+            {
+                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} SetupTimeAllToAll 1", 
+                "name": "Single Chip"
+            }, 
+            {
+                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm} SetupTimeAllToAll 2", 
+                "name": "Small System"
+            }
+        ]
+    }, 
+    {
+        "model": {
+            "description": "", 
+            "name": "SetupTimeRandom"
+        }, 
+        "tasks": [
+            {
+                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} SetupTimeRandom 0", 
+                "name": "Single Core/Smallest Network"
+            }, 
+            {
+                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} SetupTimeRandom 1", 
+                "name": "Single Chip"
+            }, 
+            {
+                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm} SetupTimeRandom 2", 
+                "name": "Small System"
+            }
+        ]
+    }, 
+    {
+        "model": {
+            "description": "This SNAB will test the maximal frequency of a single neuron by simply setting the neuron membrane reset-potential above threshold. Although, spikes are only recorded for a single neuron, multiple neurons are simulated", 
+            "name": "OutputFrequencySingleNeuron2"
+        }, 
+        "tasks": [
+            {
+                "command": "./benchmark  {system=nest} OutputFrequencySingleNeuron2 0", 
+                "name": "Single Core/Smallest Network"
+            }, 
+            {
+                "command": "./benchmark  {system=nest} OutputFrequencySingleNeuron2 1", 
+                "name": "Single Chip"
+            }, 
+            {
+                "command": "./benchmark  {system=nest} OutputFrequencySingleNeuron2 2", 
+                "name": "Small System"
+            }
+        ]
+    }, 
+    {
+        "model": {
+            "description": "This SNAB will test the maximal frequency of a single neuron by simply setting the neuron membrane reset-potential above threshold.", 
+            "name": "OutputFrequencySingleNeuron"
+        }, 
+        "tasks": [
+            {
+                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} OutputFrequencySingleNeuron 0", 
+                "name": "Single Core/Smallest Network"
+            }
+        ]
+    }, 
+    {
+        "model": {
+            "description": "Here we do a similar test as in OutputFrequencySingleNeurons, but now we increase the number of neurons used. We look at averages over neurons instead of the average of a single neuron. This will show possible shortcuts in communication infrastructure of neuron-nhips to the outer world", 
+            "name": "OutputFrequencyMultipleNeurons"
+        }, 
+        "tasks": [
+            {
+                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} OutputFrequencyMultipleNeurons 0", 
+                "name": "Single Core/Smallest Network"
+            }, 
+            {
+                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} OutputFrequencyMultipleNeurons 1", 
+                "name": "Single Chip"
+            }, 
+            {
+                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm} OutputFrequencyMultipleNeurons 2", 
+                "name": "Small System"
+            }, 
+            {
+                "command": "./benchmark  {system=spiNNaker} OutputFrequencyMultipleNeurons 3", 
+                "name": "Large System"
+            }
+        ]
+    }, 
+    {
+        "model": {
+            "description": "This SNAB looks at the voltage trace of a single neuron to measure the length of the refractory period. The result is the deviation from the set parameter: Negative values correspond to too short periods, positive values indicate a period which is too long.", 
+            "name": "RefractoryPeriod"
+        }, 
+        "tasks": [
+            {
+                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} RefractoryPeriod 0", 
+                "name": "Single Core/Smallest Network"
+            }
+        ]
+    }
+]
