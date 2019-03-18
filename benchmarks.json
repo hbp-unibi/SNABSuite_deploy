@@ -6,7 +6,7 @@
         }, 
         "tasks": [
             {
-                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm} SimpleWTA 0", 
+                "command": "benchmark.py  {system=nest,spiNNaker,hardware.hbp_pm} SimpleWTA 0", 
                 "name": "Single Core/Smallest Network"
             }
         ]
@@ -18,7 +18,7 @@
         }, 
         "tasks": [
             {
-                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} LateralInhibWTA 0", 
+                "command": "benchmark.py  {system=nest,spiNNaker,hardware.hbp_pm,spikey} LateralInhibWTA 0", 
                 "name": "Single Core/Smallest Network"
             }
         ]
@@ -30,7 +30,7 @@
         }, 
         "tasks": [
             {
-                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} MirrorInhibWTA 0", 
+                "command": "benchmark.py  {system=nest,spiNNaker,hardware.hbp_pm,spikey} MirrorInhibWTA 0", 
                 "name": "Single Core/Smallest Network"
             }
         ]
@@ -42,19 +42,19 @@
         }, 
         "tasks": [
             {
-                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} SingleMaxFreqToGroup 0", 
+                "command": "benchmark.py  {system=nest,spiNNaker,hardware.hbp_pm,spikey} SingleMaxFreqToGroup 0", 
                 "name": "Single Core/Smallest Network"
             }, 
             {
-                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} SingleMaxFreqToGroup 1", 
+                "command": "benchmark.py  {system=nest,spiNNaker,hardware.hbp_pm,spikey} SingleMaxFreqToGroup 1", 
                 "name": "Single Chip"
             }, 
             {
-                "command": "./benchmark  {system=nest,spiNNaker} SingleMaxFreqToGroup 2", 
+                "command": "benchmark.py  {system=nest,spiNNaker} SingleMaxFreqToGroup 2", 
                 "name": "Small System"
             }, 
             {
-                "command": "./benchmark  {system=spiNNaker} SingleMaxFreqToGroup 3", 
+                "command": "benchmark.py  {system=spiNNaker} SingleMaxFreqToGroup 3", 
                 "name": "Large System"
             }
         ]
@@ -66,19 +66,19 @@
         }, 
         "tasks": [
             {
-                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} GroupMaxFreqToGroupProb 0", 
+                "command": "benchmark.py  {system=nest,spiNNaker,hardware.hbp_pm,spikey} GroupMaxFreqToGroupProb 0", 
                 "name": "Single Core/Smallest Network"
             }, 
             {
-                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm} GroupMaxFreqToGroupProb 1", 
+                "command": "benchmark.py  {system=nest,spiNNaker,hardware.hbp_pm} GroupMaxFreqToGroupProb 1", 
                 "name": "Single Chip"
             }, 
             {
-                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm} GroupMaxFreqToGroupProb 2", 
+                "command": "benchmark.py  {system=nest,spiNNaker,hardware.hbp_pm} GroupMaxFreqToGroupProb 2", 
                 "name": "Small System"
             }, 
             {
-                "command": "./benchmark  {system=spiNNaker} GroupMaxFreqToGroupProb 3", 
+                "command": "benchmark.py  {system=spiNNaker} GroupMaxFreqToGroupProb 3", 
                 "name": "Large System"
             }
         ]
@@ -90,19 +90,19 @@
         }, 
         "tasks": [
             {
-                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} GroupMaxFreqToGroupAllToAll 0", 
+                "command": "benchmark.py  {system=nest,spiNNaker,hardware.hbp_pm,spikey} GroupMaxFreqToGroupAllToAll 0", 
                 "name": "Single Core/Smallest Network"
             }, 
             {
-                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm} GroupMaxFreqToGroupAllToAll 1", 
+                "command": "benchmark.py  {system=nest,spiNNaker,hardware.hbp_pm} GroupMaxFreqToGroupAllToAll 1", 
                 "name": "Single Chip"
             }, 
             {
-                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm} GroupMaxFreqToGroupAllToAll 2", 
+                "command": "benchmark.py  {system=nest,spiNNaker,hardware.hbp_pm} GroupMaxFreqToGroupAllToAll 2", 
                 "name": "Small System"
             }, 
             {
-                "command": "./benchmark  {system=spiNNaker} GroupMaxFreqToGroupAllToAll 3", 
+                "command": "benchmark.py  {system=spiNNaker} GroupMaxFreqToGroupAllToAll 3", 
                 "name": "Large System"
             }
         ]
@@ -114,19 +114,19 @@
         }, 
         "tasks": [
             {
-                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} GroupMaxFreqToGroup 0", 
+                "command": "benchmark.py  {system=nest,spiNNaker,hardware.hbp_pm,spikey} GroupMaxFreqToGroup 0", 
                 "name": "Single Core/Smallest Network"
             }, 
             {
-                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} GroupMaxFreqToGroup 1", 
+                "command": "benchmark.py  {system=nest,spiNNaker,hardware.hbp_pm,spikey} GroupMaxFreqToGroup 1", 
                 "name": "Single Chip"
             }, 
             {
-                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm} GroupMaxFreqToGroup 2", 
+                "command": "benchmark.py  {system=nest,spiNNaker,hardware.hbp_pm} GroupMaxFreqToGroup 2", 
                 "name": "Small System"
             }, 
             {
-                "command": "./benchmark  {system=spiNNaker} GroupMaxFreqToGroup 3", 
+                "command": "benchmark.py  {system=spiNNaker} GroupMaxFreqToGroup 3", 
                 "name": "Large System"
             }
         ]
@@ -138,15 +138,15 @@
         }, 
         "tasks": [
             {
-                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} MaxInputFixedOutConnector 0", 
+                "command": "benchmark.py  {system=nest,spiNNaker,hardware.hbp_pm,spikey} MaxInputFixedOutConnector 0", 
                 "name": "Single Core/Smallest Network"
             }, 
             {
-                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} MaxInputFixedOutConnector 1", 
+                "command": "benchmark.py  {system=nest,spiNNaker,hardware.hbp_pm,spikey} MaxInputFixedOutConnector 1", 
                 "name": "Single Chip"
             }, 
             {
-                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm} MaxInputFixedOutConnector 2", 
+                "command": "benchmark.py  {system=nest,spiNNaker,hardware.hbp_pm} MaxInputFixedOutConnector 2", 
                 "name": "Small System"
             }
         ]
@@ -158,19 +158,19 @@
         }, 
         "tasks": [
             {
-                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} MaxInputAllToAll 0", 
+                "command": "benchmark.py  {system=nest,spiNNaker,hardware.hbp_pm,spikey} MaxInputAllToAll 0", 
                 "name": "Single Core/Smallest Network"
             }, 
             {
-                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} MaxInputAllToAll 1", 
+                "command": "benchmark.py  {system=nest,spiNNaker,hardware.hbp_pm,spikey} MaxInputAllToAll 1", 
                 "name": "Single Chip"
             }, 
             {
-                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm} MaxInputAllToAll 2", 
+                "command": "benchmark.py  {system=nest,spiNNaker,hardware.hbp_pm} MaxInputAllToAll 2", 
                 "name": "Small System"
             }, 
             {
-                "command": "./benchmark  {system=spiNNaker} MaxInputAllToAll 3", 
+                "command": "benchmark.py  {system=spiNNaker} MaxInputAllToAll 3", 
                 "name": "Large System"
             }
         ]
@@ -182,19 +182,19 @@
         }, 
         "tasks": [
             {
-                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} MaxInputFixedInConnector 0", 
+                "command": "benchmark.py  {system=nest,spiNNaker,hardware.hbp_pm,spikey} MaxInputFixedInConnector 0", 
                 "name": "Single Core/Smallest Network"
             }, 
             {
-                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} MaxInputFixedInConnector 1", 
+                "command": "benchmark.py  {system=nest,spiNNaker,hardware.hbp_pm,spikey} MaxInputFixedInConnector 1", 
                 "name": "Single Chip"
             }, 
             {
-                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm} MaxInputFixedInConnector 2", 
+                "command": "benchmark.py  {system=nest,spiNNaker,hardware.hbp_pm} MaxInputFixedInConnector 2", 
                 "name": "Small System"
             }, 
             {
-                "command": "./benchmark  {system=spiNNaker} MaxInputFixedInConnector 3", 
+                "command": "benchmark.py  {system=spiNNaker} MaxInputFixedInConnector 3", 
                 "name": "Large System"
             }
         ]
@@ -206,19 +206,19 @@
         }, 
         "tasks": [
             {
-                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} MaxInputOneToOne 0", 
+                "command": "benchmark.py  {system=nest,spiNNaker,hardware.hbp_pm,spikey} MaxInputOneToOne 0", 
                 "name": "Single Core/Smallest Network"
             }, 
             {
-                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} MaxInputOneToOne 1", 
+                "command": "benchmark.py  {system=nest,spiNNaker,hardware.hbp_pm,spikey} MaxInputOneToOne 1", 
                 "name": "Single Chip"
             }, 
             {
-                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm} MaxInputOneToOne 2", 
+                "command": "benchmark.py  {system=nest,spiNNaker,hardware.hbp_pm} MaxInputOneToOne 2", 
                 "name": "Small System"
             }, 
             {
-                "command": "./benchmark  {system=spiNNaker} MaxInputOneToOne 3", 
+                "command": "benchmark.py  {system=spiNNaker} MaxInputOneToOne 3", 
                 "name": "Large System"
             }
         ]
@@ -230,19 +230,19 @@
         }, 
         "tasks": [
             {
-                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} SetupTimeOneToOne 0", 
+                "command": "benchmark.py  {system=nest,spiNNaker,hardware.hbp_pm,spikey} SetupTimeOneToOne 0", 
                 "name": "Single Core/Smallest Network"
             }, 
             {
-                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} SetupTimeOneToOne 1", 
+                "command": "benchmark.py  {system=nest,spiNNaker,hardware.hbp_pm,spikey} SetupTimeOneToOne 1", 
                 "name": "Single Chip"
             }, 
             {
-                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm} SetupTimeOneToOne 2", 
+                "command": "benchmark.py  {system=nest,spiNNaker,hardware.hbp_pm} SetupTimeOneToOne 2", 
                 "name": "Small System"
             }, 
             {
-                "command": "./benchmark  {system=spiNNaker} SetupTimeOneToOne 3", 
+                "command": "benchmark.py  {system=spiNNaker} SetupTimeOneToOne 3", 
                 "name": "Large System"
             }
         ]
@@ -254,15 +254,15 @@
         }, 
         "tasks": [
             {
-                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} SetupTimeAllToAll 0", 
+                "command": "benchmark.py  {system=nest,spiNNaker,hardware.hbp_pm,spikey} SetupTimeAllToAll 0", 
                 "name": "Single Core/Smallest Network"
             }, 
             {
-                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} SetupTimeAllToAll 1", 
+                "command": "benchmark.py  {system=nest,spiNNaker,hardware.hbp_pm,spikey} SetupTimeAllToAll 1", 
                 "name": "Single Chip"
             }, 
             {
-                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm} SetupTimeAllToAll 2", 
+                "command": "benchmark.py  {system=nest,spiNNaker,hardware.hbp_pm} SetupTimeAllToAll 2", 
                 "name": "Small System"
             }
         ]
@@ -274,15 +274,15 @@
         }, 
         "tasks": [
             {
-                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} SetupTimeRandom 0", 
+                "command": "benchmark.py  {system=nest,spiNNaker,hardware.hbp_pm,spikey} SetupTimeRandom 0", 
                 "name": "Single Core/Smallest Network"
             }, 
             {
-                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} SetupTimeRandom 1", 
+                "command": "benchmark.py  {system=nest,spiNNaker,hardware.hbp_pm,spikey} SetupTimeRandom 1", 
                 "name": "Single Chip"
             }, 
             {
-                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm} SetupTimeRandom 2", 
+                "command": "benchmark.py  {system=nest,spiNNaker,hardware.hbp_pm} SetupTimeRandom 2", 
                 "name": "Small System"
             }
         ]
@@ -294,15 +294,15 @@
         }, 
         "tasks": [
             {
-                "command": "./benchmark  {system=nest} OutputFrequencySingleNeuron2 0", 
+                "command": "benchmark.py  {system=nest} OutputFrequencySingleNeuron2 0", 
                 "name": "Single Core/Smallest Network"
             }, 
             {
-                "command": "./benchmark  {system=nest} OutputFrequencySingleNeuron2 1", 
+                "command": "benchmark.py  {system=nest} OutputFrequencySingleNeuron2 1", 
                 "name": "Single Chip"
             }, 
             {
-                "command": "./benchmark  {system=nest} OutputFrequencySingleNeuron2 2", 
+                "command": "benchmark.py  {system=nest} OutputFrequencySingleNeuron2 2", 
                 "name": "Small System"
             }
         ]
@@ -314,7 +314,7 @@
         }, 
         "tasks": [
             {
-                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} OutputFrequencySingleNeuron 0", 
+                "command": "benchmark.py  {system=nest,spiNNaker,hardware.hbp_pm,spikey} OutputFrequencySingleNeuron 0", 
                 "name": "Single Core/Smallest Network"
             }
         ]
@@ -326,19 +326,19 @@
         }, 
         "tasks": [
             {
-                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} OutputFrequencyMultipleNeurons 0", 
+                "command": "benchmark.py  {system=nest,spiNNaker,hardware.hbp_pm,spikey} OutputFrequencyMultipleNeurons 0", 
                 "name": "Single Core/Smallest Network"
             }, 
             {
-                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} OutputFrequencyMultipleNeurons 1", 
+                "command": "benchmark.py  {system=nest,spiNNaker,hardware.hbp_pm,spikey} OutputFrequencyMultipleNeurons 1", 
                 "name": "Single Chip"
             }, 
             {
-                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm} OutputFrequencyMultipleNeurons 2", 
+                "command": "benchmark.py  {system=nest,spiNNaker,hardware.hbp_pm} OutputFrequencyMultipleNeurons 2", 
                 "name": "Small System"
             }, 
             {
-                "command": "./benchmark  {system=spiNNaker} OutputFrequencyMultipleNeurons 3", 
+                "command": "benchmark.py  {system=spiNNaker} OutputFrequencyMultipleNeurons 3", 
                 "name": "Large System"
             }
         ]
@@ -350,7 +350,7 @@
         }, 
         "tasks": [
             {
-                "command": "./benchmark  {system=nest,spiNNaker,hardware.hbp_pm,spikey} RefractoryPeriod 0", 
+                "command": "benchmark.py  {system=nest,spiNNaker,hardware.hbp_pm,spikey} RefractoryPeriod 0", 
                 "name": "Single Core/Smallest Network"
             }
         ]
