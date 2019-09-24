@@ -695,9 +695,15 @@
         "tasks": [
             {
                 "command": "benchmark.py {system} OutputFrequencySingleNeuron2 0", 
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 33
+                    }
+                }, 
                 "name": "Single Core/Smallest Network", 
                 "target": [
-                    "NEST"
+                    "NEST", 
+                    "BrainScaleS"
                 ]
             }, 
             {
@@ -817,6 +823,38 @@
                     "SpiNNaker", 
                     "BrainScaleS", 
                     "Spikey"
+                ]
+            }
+        ]
+    }, 
+    {
+        "model": {
+            "description": "This benchmark is dedicated to compare response/activation functions of neurons in neuromorphic hardware to those from simulation. This being said, the simulation from NEST with a numerical timestep of 0.1ms and complex integrator is used as ground truth.", 
+            "name": "WeightDependentActivation"
+        }, 
+        "tasks": [
+            {
+                "command": "benchmark.py {system} WeightDependentActivation 0", 
+                "name": "Single Core/Smallest Network", 
+                "target": [
+                    "NEST", 
+                    "SpiNNaker"
+                ]
+            }
+        ]
+    }, 
+    {
+        "model": {
+            "description": "", 
+            "name": "RateBasedWeightDependentActivation"
+        }, 
+        "tasks": [
+            {
+                "command": "benchmark.py {system} RateBasedWeightDependentActivation 0", 
+                "name": "Single Core/Smallest Network", 
+                "target": [
+                    "NEST", 
+                    "SpiNNaker"
                 ]
             }
         ]
