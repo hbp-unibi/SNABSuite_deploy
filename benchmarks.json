@@ -1,860 +1,822 @@
 [
     {
         "model": {
-            "description": "SimpleWTA: A simple Winner-Takes-All network. Every population represents a winner, inhibition is directly between the populations.", 
-            "name": "SimpleWTA"
-        }, 
-        "tasks": [
-            {
-                "command": "benchmark.py {system} SimpleWTA 0", 
-                "config": {
-                    "BrainScaleS": {
-                        "WAFER_MODULE": 33
-                    }
-                }, 
-                "name": "Single Core/Smallest Network", 
-                "target": [
-                    "NEST", 
-                    "SpiNNaker", 
-                    "BrainScaleS"
-                ]
-            }
-        ]
-    }, 
-    {
-        "model": {
-            "description": "Lateral Inhibition Winner-Takes-All: A centered inhibitory population suppresses all Winner populations.", 
-            "name": "LateralInhibWTA"
-        }, 
-        "tasks": [
-            {
-                "command": "benchmark.py {system} LateralInhibWTA 0", 
-                "config": {
-                    "BrainScaleS": {
-                        "WAFER_MODULE": 33
-                    }
-                }, 
-                "name": "Single Core/Smallest Network", 
-                "target": [
-                    "NEST", 
-                    "SpiNNaker", 
-                    "BrainScaleS", 
-                    "Spikey"
-                ]
-            }
-        ]
-    }, 
-    {
-        "model": {
-            "description": "All Winner populations are mirrored by an inhibitory population, which suppresses all other (besides their own) winner population.", 
-            "name": "MirrorInhibWTA"
-        }, 
-        "tasks": [
-            {
-                "command": "benchmark.py {system} MirrorInhibWTA 0", 
-                "config": {
-                    "BrainScaleS": {
-                        "WAFER_MODULE": 33
-                    }
-                }, 
-                "name": "Single Core/Smallest Network", 
-                "target": [
-                    "NEST", 
-                    "SpiNNaker", 
-                    "BrainScaleS", 
-                    "Spikey"
-                ]
-            }
-        ]
-    }, 
-    {
-        "model": {
-            "description": "The aim of this SNAB is to measure the bandwidth between neuron populations. Therefore, taking parameters from the OutputFrequency benchmarks, a single continously spiking neuron is connected to a population of neurons. The number of spikes of the population is measured and taken as the benchmark measure. ", 
-            "name": "SingleMaxFreqToGroup"
-        }, 
-        "tasks": [
-            {
-                "command": "benchmark.py {system} SingleMaxFreqToGroup 0", 
-                "config": {
-                    "BrainScaleS": {
-                        "WAFER_MODULE": 33
-                    }
-                }, 
-                "name": "Single Core/Smallest Network", 
-                "target": [
-                    "NEST", 
-                    "SpiNNaker", 
-                    "BrainScaleS", 
-                    "Spikey"
-                ]
-            }, 
-            {
-                "command": "benchmark.py {system} SingleMaxFreqToGroup 1", 
-                "config": {
-                    "BrainScaleS": {
-                        "WAFER_MODULE": 33
-                    }
-                }, 
-                "name": "Single Chip", 
-                "target": [
-                    "NEST", 
-                    "SpiNNaker", 
-                    "BrainScaleS", 
-                    "Spikey"
-                ]
-            }, 
-            {
-                "command": "benchmark.py {system} SingleMaxFreqToGroup 2", 
-                "name": "Small System", 
-                "target": [
-                    "NEST", 
-                    "SpiNNaker"
-                ]
-            }, 
-            {
-                "command": "benchmark.py {system} SingleMaxFreqToGroup 3", 
-                "name": "Large System", 
-                "target": [
-                    "SpiNNaker"
-                ]
-            }
-        ]
-    }, 
-    {
-        "model": {
-            "description": "Identical to GroupMaxFreqToGroup, but using the FixedProbability connector and allowing different number of input neurons", 
-            "name": "GroupMaxFreqToGroupProb"
-        }, 
-        "tasks": [
-            {
-                "command": "benchmark.py {system} GroupMaxFreqToGroupProb 0", 
-                "config": {
-                    "BrainScaleS": {
-                        "WAFER_MODULE": 33
-                    }
-                }, 
-                "name": "Single Core/Smallest Network", 
-                "target": [
-                    "NEST", 
-                    "SpiNNaker", 
-                    "BrainScaleS", 
-                    "Spikey"
-                ]
-            }, 
-            {
-                "command": "benchmark.py {system} GroupMaxFreqToGroupProb 1", 
-                "config": {
-                    "BrainScaleS": {
-                        "WAFER_MODULE": 33
-                    }
-                }, 
-                "name": "Single Chip", 
-                "target": [
-                    "NEST", 
-                    "SpiNNaker", 
-                    "BrainScaleS"
-                ]
-            }, 
-            {
-                "command": "benchmark.py {system} GroupMaxFreqToGroupProb 2", 
-                "config": {
-                    "BrainScaleS": {
-                        "WAFER_MODULE": 33
-                    }
-                }, 
-                "name": "Small System", 
-                "target": [
-                    "NEST", 
-                    "SpiNNaker", 
-                    "BrainScaleS"
-                ]
-            }, 
-            {
-                "command": "benchmark.py {system} GroupMaxFreqToGroupProb 3", 
-                "name": "Large System", 
-                "target": [
-                    "SpiNNaker"
-                ]
-            }
-        ]
-    }, 
-    {
-        "model": {
-            "description": "Identical to GroupMaxFreqToGroup, but using the AllToAll connector and allowing different number of input neurons", 
-            "name": "GroupMaxFreqToGroupAllToAll"
-        }, 
-        "tasks": [
-            {
-                "command": "benchmark.py {system} GroupMaxFreqToGroupAllToAll 0", 
-                "config": {
-                    "BrainScaleS": {
-                        "WAFER_MODULE": 33
-                    }
-                }, 
-                "name": "Single Core/Smallest Network", 
-                "target": [
-                    "NEST", 
-                    "SpiNNaker", 
-                    "BrainScaleS", 
-                    "Spikey"
-                ]
-            }, 
-            {
-                "command": "benchmark.py {system} GroupMaxFreqToGroupAllToAll 1", 
-                "config": {
-                    "BrainScaleS": {
-                        "WAFER_MODULE": 33
-                    }
-                }, 
-                "name": "Single Chip", 
-                "target": [
-                    "NEST", 
-                    "SpiNNaker", 
-                    "BrainScaleS"
-                ]
-            }, 
-            {
-                "command": "benchmark.py {system} GroupMaxFreqToGroupAllToAll 2", 
-                "config": {
-                    "BrainScaleS": {
-                        "WAFER_MODULE": 33
-                    }
-                }, 
-                "name": "Small System", 
-                "target": [
-                    "NEST", 
-                    "SpiNNaker", 
-                    "BrainScaleS"
-                ]
-            }, 
-            {
-                "command": "benchmark.py {system} GroupMaxFreqToGroupAllToAll 3", 
-                "name": "Large System", 
-                "target": [
-                    "SpiNNaker"
-                ]
-            }
-        ]
-    }, 
-    {
-        "model": {
-            "description": "Similar to the benchmark before, this SNAB measures the bandwidth between neuron populations. Now, the input population firing at maximal frequency consist of the same number of neurons as the target population. The populations are connected via a OneToOne-Connector.", 
-            "name": "GroupMaxFreqToGroup"
-        }, 
-        "tasks": [
-            {
-                "command": "benchmark.py {system} GroupMaxFreqToGroup 0", 
-                "config": {
-                    "BrainScaleS": {
-                        "WAFER_MODULE": 33
-                    }
-                }, 
-                "name": "Single Core/Smallest Network", 
-                "target": [
-                    "NEST", 
-                    "SpiNNaker", 
-                    "BrainScaleS", 
-                    "Spikey"
-                ]
-            }, 
-            {
-                "command": "benchmark.py {system} GroupMaxFreqToGroup 1", 
-                "config": {
-                    "BrainScaleS": {
-                        "WAFER_MODULE": 33
-                    }
-                }, 
-                "name": "Single Chip", 
-                "target": [
-                    "NEST", 
-                    "SpiNNaker", 
-                    "BrainScaleS", 
-                    "Spikey"
-                ]
-            }, 
-            {
-                "command": "benchmark.py {system} GroupMaxFreqToGroup 2", 
-                "config": {
-                    "BrainScaleS": {
-                        "WAFER_MODULE": 33
-                    }
-                }, 
-                "name": "Small System", 
-                "target": [
-                    "NEST", 
-                    "SpiNNaker", 
-                    "BrainScaleS"
-                ]
-            }, 
-            {
-                "command": "benchmark.py {system} GroupMaxFreqToGroup 3", 
-                "name": "Large System", 
-                "target": [
-                    "SpiNNaker"
-                ]
-            }
-        ]
-    }, 
-    {
-        "model": {
-            "description": "Check the input bandwidth by injecting spikes per fixed fan out connection. Check if output neurons spike accordingly", 
-            "name": "MaxInputFixedOutConnector"
-        }, 
-        "tasks": [
-            {
-                "command": "benchmark.py {system} MaxInputFixedOutConnector 0", 
-                "config": {
-                    "BrainScaleS": {
-                        "WAFER_MODULE": 33
-                    }
-                }, 
-                "name": "Single Core/Smallest Network", 
-                "target": [
-                    "NEST", 
-                    "SpiNNaker", 
-                    "BrainScaleS", 
-                    "Spikey"
-                ]
-            }, 
-            {
-                "command": "benchmark.py {system} MaxInputFixedOutConnector 1", 
-                "config": {
-                    "BrainScaleS": {
-                        "WAFER_MODULE": 33
-                    }
-                }, 
-                "name": "Single Chip", 
-                "target": [
-                    "NEST", 
-                    "SpiNNaker", 
-                    "BrainScaleS", 
-                    "Spikey"
-                ]
-            }, 
-            {
-                "command": "benchmark.py {system} MaxInputFixedOutConnector 2", 
-                "config": {
-                    "BrainScaleS": {
-                        "WAFER_MODULE": 33
-                    }
-                }, 
-                "name": "Small System", 
-                "target": [
-                    "NEST", 
-                    "SpiNNaker", 
-                    "BrainScaleS"
-                ]
-            }
-        ]
-    }, 
-    {
-        "model": {
-            "description": "Check the input bandwidth by injecting spikes per all to all connection. Check if output neurons spike accordingly", 
-            "name": "MaxInputAllToAll"
-        }, 
-        "tasks": [
-            {
-                "command": "benchmark.py {system} MaxInputAllToAll 0", 
-                "config": {
-                    "BrainScaleS": {
-                        "WAFER_MODULE": 33
-                    }
-                }, 
-                "name": "Single Core/Smallest Network", 
-                "target": [
-                    "NEST", 
-                    "SpiNNaker", 
-                    "BrainScaleS", 
-                    "Spikey"
-                ]
-            }, 
-            {
-                "command": "benchmark.py {system} MaxInputAllToAll 1", 
-                "config": {
-                    "BrainScaleS": {
-                        "WAFER_MODULE": 33
-                    }
-                }, 
-                "name": "Single Chip", 
-                "target": [
-                    "NEST", 
-                    "SpiNNaker", 
-                    "BrainScaleS", 
-                    "Spikey"
-                ]
-            }, 
-            {
-                "command": "benchmark.py {system} MaxInputAllToAll 2", 
-                "config": {
-                    "BrainScaleS": {
-                        "WAFER_MODULE": 33
-                    }
-                }, 
-                "name": "Small System", 
-                "target": [
-                    "NEST", 
-                    "SpiNNaker", 
-                    "BrainScaleS"
-                ]
-            }, 
-            {
-                "command": "benchmark.py {system} MaxInputAllToAll 3", 
-                "name": "Large System", 
-                "target": [
-                    "SpiNNaker"
-                ]
-            }
-        ]
-    }, 
-    {
-        "model": {
-            "description": "Check the input bandwidth by injecting spikes per fixed fan out connection. Check if output neurons spike accordingly", 
-            "name": "MaxInputFixedInConnector"
-        }, 
-        "tasks": [
-            {
-                "command": "benchmark.py {system} MaxInputFixedInConnector 0", 
-                "config": {
-                    "BrainScaleS": {
-                        "WAFER_MODULE": 33
-                    }
-                }, 
-                "name": "Single Core/Smallest Network", 
-                "target": [
-                    "NEST", 
-                    "SpiNNaker", 
-                    "BrainScaleS", 
-                    "Spikey"
-                ]
-            }, 
-            {
-                "command": "benchmark.py {system} MaxInputFixedInConnector 1", 
-                "config": {
-                    "BrainScaleS": {
-                        "WAFER_MODULE": 33
-                    }
-                }, 
-                "name": "Single Chip", 
-                "target": [
-                    "NEST", 
-                    "SpiNNaker", 
-                    "BrainScaleS", 
-                    "Spikey"
-                ]
-            }, 
-            {
-                "command": "benchmark.py {system} MaxInputFixedInConnector 2", 
-                "config": {
-                    "BrainScaleS": {
-                        "WAFER_MODULE": 33
-                    }
-                }, 
-                "name": "Small System", 
-                "target": [
-                    "NEST", 
-                    "SpiNNaker", 
-                    "BrainScaleS"
-                ]
-            }, 
-            {
-                "command": "benchmark.py {system} MaxInputFixedInConnector 3", 
-                "name": "Large System", 
-                "target": [
-                    "SpiNNaker"
-                ]
-            }
-        ]
-    }, 
-    {
-        "model": {
-            "description": "Check the input bandwidth by injecting spikes per one to one connection. Check if output neurons spike accordingly", 
-            "name": "MaxInputOneToOne"
-        }, 
-        "tasks": [
-            {
-                "command": "benchmark.py {system} MaxInputOneToOne 0", 
-                "config": {
-                    "BrainScaleS": {
-                        "WAFER_MODULE": 21
-                    }
-                }, 
-                "name": "Single Core/Smallest Network", 
-                "target": [
-                    "NEST", 
-                    "SpiNNaker", 
-                    "BrainScaleS", 
-                    "Spikey"
-                ]
-            }, 
-            {
-                "command": "benchmark.py {system} MaxInputOneToOne 1", 
-                "config": {
-                    "BrainScaleS": {
-                        "WAFER_MODULE": 21
-                    }
-                }, 
-                "name": "Single Chip", 
-                "target": [
-                    "NEST", 
-                    "SpiNNaker", 
-                    "BrainScaleS", 
-                    "Spikey"
-                ]
-            }, 
-            {
-                "command": "benchmark.py {system} MaxInputOneToOne 2", 
-                "config": {
-                    "BrainScaleS": {
-                        "WAFER_MODULE": 21
-                    }
-                }, 
-                "name": "Small System", 
-                "target": [
-                    "NEST", 
-                    "SpiNNaker", 
-                    "BrainScaleS"
-                ]
-            }, 
-            {
-                "command": "benchmark.py {system} MaxInputOneToOne 3", 
-                "name": "Large System", 
-                "target": [
-                    "SpiNNaker"
-                ]
-            }
-        ]
-    }, 
-    {
-        "model": {
-            "description": "", 
-            "name": "SetupTimeOneToOne"
-        }, 
-        "tasks": [
-            {
-                "command": "benchmark.py {system} SetupTimeOneToOne 0", 
-                "config": {
-                    "BrainScaleS": {
-                        "WAFER_MODULE": 33
-                    }
-                }, 
-                "name": "Single Core/Smallest Network", 
-                "target": [
-                    "NEST", 
-                    "SpiNNaker", 
-                    "BrainScaleS", 
-                    "Spikey"
-                ]
-            }, 
-            {
-                "command": "benchmark.py {system} SetupTimeOneToOne 1", 
-                "config": {
-                    "BrainScaleS": {
-                        "WAFER_MODULE": 33
-                    }
-                }, 
-                "name": "Single Chip", 
-                "target": [
-                    "NEST", 
-                    "SpiNNaker", 
-                    "BrainScaleS", 
-                    "Spikey"
-                ]
-            }, 
-            {
-                "command": "benchmark.py {system} SetupTimeOneToOne 2", 
-                "config": {
-                    "BrainScaleS": {
-                        "WAFER_MODULE": 33
-                    }
-                }, 
-                "name": "Small System", 
-                "target": [
-                    "NEST", 
-                    "SpiNNaker", 
-                    "BrainScaleS"
-                ]
-            }, 
-            {
-                "command": "benchmark.py {system} SetupTimeOneToOne 3", 
-                "name": "Large System", 
-                "target": [
-                    "SpiNNaker"
-                ]
-            }
-        ]
-    }, 
-    {
-        "model": {
-            "description": "", 
-            "name": "SetupTimeAllToAll"
-        }, 
-        "tasks": [
-            {
-                "command": "benchmark.py {system} SetupTimeAllToAll 0", 
-                "config": {
-                    "BrainScaleS": {
-                        "WAFER_MODULE": 33
-                    }
-                }, 
-                "name": "Single Core/Smallest Network", 
-                "target": [
-                    "NEST", 
-                    "SpiNNaker", 
-                    "BrainScaleS", 
-                    "Spikey"
-                ]
-            }, 
-            {
-                "command": "benchmark.py {system} SetupTimeAllToAll 1", 
-                "config": {
-                    "BrainScaleS": {
-                        "WAFER_MODULE": 33
-                    }
-                }, 
-                "name": "Single Chip", 
-                "target": [
-                    "NEST", 
-                    "SpiNNaker", 
-                    "BrainScaleS", 
-                    "Spikey"
-                ]
-            }, 
-            {
-                "command": "benchmark.py {system} SetupTimeAllToAll 2", 
-                "config": {
-                    "BrainScaleS": {
-                        "WAFER_MODULE": 33
-                    }
-                }, 
-                "name": "Small System", 
-                "target": [
-                    "NEST", 
-                    "SpiNNaker", 
-                    "BrainScaleS"
-                ]
-            }
-        ]
-    }, 
-    {
-        "model": {
-            "description": "", 
-            "name": "SetupTimeRandom"
-        }, 
-        "tasks": [
-            {
-                "command": "benchmark.py {system} SetupTimeRandom 0", 
-                "config": {
-                    "BrainScaleS": {
-                        "WAFER_MODULE": 33
-                    }
-                }, 
-                "name": "Single Core/Smallest Network", 
-                "target": [
-                    "NEST", 
-                    "SpiNNaker", 
-                    "BrainScaleS", 
-                    "Spikey"
-                ]
-            }, 
-            {
-                "command": "benchmark.py {system} SetupTimeRandom 1", 
-                "config": {
-                    "BrainScaleS": {
-                        "WAFER_MODULE": 33
-                    }
-                }, 
-                "name": "Single Chip", 
-                "target": [
-                    "NEST", 
-                    "SpiNNaker", 
-                    "BrainScaleS", 
-                    "Spikey"
-                ]
-            }, 
-            {
-                "command": "benchmark.py {system} SetupTimeRandom 2", 
-                "config": {
-                    "BrainScaleS": {
-                        "WAFER_MODULE": 33
-                    }
-                }, 
-                "name": "Small System", 
-                "target": [
-                    "NEST", 
-                    "SpiNNaker", 
-                    "BrainScaleS"
-                ]
-            }
-        ]
-    }, 
-    {
-        "model": {
-            "description": "This SNAB will test the maximal frequency of a single neuron by simply setting the neuron membrane reset-potential above threshold. Although, spikes are only recorded for a single neuron, multiple neurons are simulated", 
-            "name": "OutputFrequencySingleNeuron2"
-        }, 
-        "tasks": [
-            {
-                "command": "benchmark.py {system} OutputFrequencySingleNeuron2 0", 
-                "config": {
-                    "BrainScaleS": {
-                        "WAFER_MODULE": 33
-                    }
-                }, 
-                "name": "Single Core/Smallest Network", 
-                "target": [
-                    "NEST", 
-                    "BrainScaleS"
-                ]
-            }, 
-            {
-                "command": "benchmark.py {system} OutputFrequencySingleNeuron2 1", 
-                "name": "Single Chip", 
-                "target": [
-                    "NEST"
-                ]
-            }, 
-            {
-                "command": "benchmark.py {system} OutputFrequencySingleNeuron2 2", 
-                "name": "Small System", 
-                "target": [
-                    "NEST"
-                ]
-            }
-        ]
-    }, 
-    {
-        "model": {
-            "description": "This SNAB will test the maximal frequency of a single neuron by simply setting the neuron membrane reset-potential above threshold.", 
+            "description": "This SNAB will test the maximal frequency of a single neuron by simply setting the neuron membrane reset-potential above threshold.",
             "name": "OutputFrequencySingleNeuron"
-        }, 
+        },
         "tasks": [
             {
-                "command": "benchmark.py {system} OutputFrequencySingleNeuron 0", 
+                "command": "benchmark.py {system} OutputFrequencySingleNeuron 0",
                 "config": {
                     "BrainScaleS": {
                         "WAFER_MODULE": 33
                     }
-                }, 
-                "name": "Single Core/Smallest Network", 
+                },
+                "name": "Single Core/Smallest Network",
                 "target": [
-                    "NEST", 
-                    "SpiNNaker", 
-                    "BrainScaleS", 
+                    "NEST",
+                    "SpiNNaker",
+                    "BrainScaleS",
                     "Spikey"
                 ]
             }
         ]
-    }, 
+    },
     {
         "model": {
-            "description": "Here we do a similar test as in OutputFrequencySingleNeurons, but now we increase the number of neurons used. We look at averages over neurons instead of the average of a single neuron. This will show possible shortcuts in communication infrastructure of neuron-nhips to the outer world", 
-            "name": "OutputFrequencyMultipleNeurons"
-        }, 
+            "description": "This SNAB will test the maximal frequency of a single neuron by simply setting the neuron membrane reset-potential above threshold. Although, spikes are only recorded for a single neuron, multiple neurons are simulated",
+            "name": "OutputFrequencySingleNeuron2"
+        },
         "tasks": [
             {
-                "command": "benchmark.py {system} OutputFrequencyMultipleNeurons 0", 
+                "command": "benchmark.py {system} OutputFrequencySingleNeuron2 0",
+                "name": "Single Core/Smallest Network",
+                "target": [
+                    "NEST"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} OutputFrequencySingleNeuron2 1",
+                "name": "Single Chip",
+                "target": [
+                    "NEST"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} OutputFrequencySingleNeuron2 2",
+                "name": "Small System",
+                "target": [
+                    "NEST"
+                ]
+            }
+        ]
+    },
+    {
+        "model": {
+            "description": "Here we do a similar test as in OutputFrequencySingleNeurons, but now we increase the number of neurons used. We look at averages over neurons instead of the average of a single neuron. This will show possible shortcuts in communication infrastructure of neuron-nhips to the outer world",
+            "name": "OutputFrequencyMultipleNeurons"
+        },
+        "tasks": [
+            {
+                "command": "benchmark.py {system} OutputFrequencyMultipleNeurons 0",
                 "config": {
                     "BrainScaleS": {
                         "WAFER_MODULE": 33
                     }
-                }, 
-                "name": "Single Core/Smallest Network", 
+                },
+                "name": "Single Core/Smallest Network",
                 "target": [
-                    "NEST", 
-                    "SpiNNaker", 
-                    "BrainScaleS", 
+                    "NEST",
+                    "SpiNNaker",
+                    "BrainScaleS",
                     "Spikey"
                 ]
-            }, 
+            },
             {
-                "command": "benchmark.py {system} OutputFrequencyMultipleNeurons 1", 
+                "command": "benchmark.py {system} OutputFrequencyMultipleNeurons 1",
                 "config": {
                     "BrainScaleS": {
                         "WAFER_MODULE": 33
                     }
-                }, 
-                "name": "Single Chip", 
+                },
+                "name": "Single Chip",
                 "target": [
-                    "NEST", 
-                    "SpiNNaker", 
-                    "BrainScaleS", 
+                    "NEST",
+                    "SpiNNaker",
+                    "BrainScaleS",
                     "Spikey"
                 ]
-            }, 
+            },
             {
-                "command": "benchmark.py {system} OutputFrequencyMultipleNeurons 2", 
+                "command": "benchmark.py {system} OutputFrequencyMultipleNeurons 2",
                 "config": {
                     "BrainScaleS": {
                         "WAFER_MODULE": 33
                     }
-                }, 
-                "name": "Small System", 
+                },
+                "name": "Small System",
                 "target": [
-                    "NEST", 
-                    "SpiNNaker", 
+                    "NEST",
+                    "SpiNNaker",
                     "BrainScaleS"
                 ]
-            }, 
+            },
             {
-                "command": "benchmark.py {system} OutputFrequencyMultipleNeurons 3", 
-                "name": "Large System", 
+                "command": "benchmark.py {system} OutputFrequencyMultipleNeurons 3",
+                "name": "Large System",
                 "target": [
                     "SpiNNaker"
                 ]
             }
         ]
-    }, 
+    },
     {
         "model": {
-            "description": "This SNAB looks at the voltage trace of a single neuron to measure the length of the refractory period. The result is the deviation from the set parameter: Negative values correspond to too short periods, positive values indicate a period which is too long.", 
-            "name": "RefractoryPeriod"
-        }, 
+            "description": "Check the input bandwidth by injecting spikes per one to one connection. Check if output neurons spike accordingly",
+            "name": "MaxInputOneToOne"
+        },
         "tasks": [
             {
-                "command": "benchmark.py {system} RefractoryPeriod 0", 
+                "command": "benchmark.py {system} MaxInputOneToOne 0",
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 21
+                    }
+                },
+                "name": "Single Core/Smallest Network",
+                "target": [
+                    "NEST",
+                    "SpiNNaker",
+                    "BrainScaleS",
+                    "Spikey"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} MaxInputOneToOne 1",
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 21
+                    }
+                },
+                "name": "Single Chip",
+                "target": [
+                    "NEST",
+                    "SpiNNaker",
+                    "BrainScaleS",
+                    "Spikey"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} MaxInputOneToOne 2",
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 21
+                    }
+                },
+                "name": "Small System",
+                "target": [
+                    "NEST",
+                    "SpiNNaker",
+                    "BrainScaleS"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} MaxInputOneToOne 3",
+                "name": "Large System",
+                "target": [
+                    "SpiNNaker"
+                ]
+            }
+        ]
+    },
+    {
+        "model": {
+            "description": "Check the input bandwidth by injecting spikes per all to all connection. Check if output neurons spike accordingly",
+            "name": "MaxInputAllToAll"
+        },
+        "tasks": [
+            {
+                "command": "benchmark.py {system} MaxInputAllToAll 0",
                 "config": {
                     "BrainScaleS": {
                         "WAFER_MODULE": 33
                     }
-                }, 
-                "name": "Single Core/Smallest Network", 
+                },
+                "name": "Single Core/Smallest Network",
                 "target": [
-                    "NEST", 
-                    "SpiNNaker", 
-                    "BrainScaleS", 
+                    "NEST",
+                    "SpiNNaker",
+                    "BrainScaleS",
+                    "Spikey"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} MaxInputAllToAll 1",
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 33
+                    }
+                },
+                "name": "Single Chip",
+                "target": [
+                    "NEST",
+                    "SpiNNaker",
+                    "BrainScaleS",
+                    "Spikey"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} MaxInputAllToAll 2",
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 33
+                    }
+                },
+                "name": "Small System",
+                "target": [
+                    "NEST",
+                    "SpiNNaker",
+                    "BrainScaleS"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} MaxInputAllToAll 3",
+                "name": "Large System",
+                "target": [
+                    "SpiNNaker"
+                ]
+            }
+        ]
+    },
+    {
+        "model": {
+            "description": "Check the input bandwidth by injecting spikes per fixed fan out connection. Check if output neurons spike accordingly",
+            "name": "MaxInputFixedOutConnector"
+        },
+        "tasks": [
+            {
+                "command": "benchmark.py {system} MaxInputFixedOutConnector 0",
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 33
+                    }
+                },
+                "name": "Single Core/Smallest Network",
+                "target": [
+                    "NEST",
+                    "SpiNNaker",
+                    "BrainScaleS",
+                    "Spikey"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} MaxInputFixedOutConnector 1",
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 33
+                    }
+                },
+                "name": "Single Chip",
+                "target": [
+                    "NEST",
+                    "SpiNNaker",
+                    "BrainScaleS",
+                    "Spikey"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} MaxInputFixedOutConnector 2",
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 33
+                    }
+                },
+                "name": "Small System",
+                "target": [
+                    "NEST",
+                    "SpiNNaker",
+                    "BrainScaleS"
+                ]
+            }
+        ]
+    },
+    {
+        "model": {
+            "description": "Check the input bandwidth by injecting spikes per fixed fan out connection. Check if output neurons spike accordingly",
+            "name": "MaxInputFixedInConnector"
+        },
+        "tasks": [
+            {
+                "command": "benchmark.py {system} MaxInputFixedInConnector 0",
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 33
+                    }
+                },
+                "name": "Single Core/Smallest Network",
+                "target": [
+                    "NEST",
+                    "SpiNNaker",
+                    "BrainScaleS",
+                    "Spikey"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} MaxInputFixedInConnector 1",
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 33
+                    }
+                },
+                "name": "Single Chip",
+                "target": [
+                    "NEST",
+                    "SpiNNaker",
+                    "BrainScaleS",
+                    "Spikey"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} MaxInputFixedInConnector 2",
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 33
+                    }
+                },
+                "name": "Small System",
+                "target": [
+                    "NEST",
+                    "SpiNNaker",
+                    "BrainScaleS"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} MaxInputFixedInConnector 3",
+                "name": "Large System",
+                "target": [
+                    "SpiNNaker"
+                ]
+            }
+        ]
+    },
+    {
+        "model": {
+            "description": "The aim of this SNAB is to measure the bandwidth between neuron populations. Therefore, taking parameters from the OutputFrequency benchmarks, a single continously spiking neuron is connected to a population of neurons. The number of spikes of the population is measured and taken as the benchmark measure. ",
+            "name": "SingleMaxFreqToGroup"
+        },
+        "tasks": [
+            {
+                "command": "benchmark.py {system} SingleMaxFreqToGroup 0",
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 33
+                    }
+                },
+                "name": "Single Core/Smallest Network",
+                "target": [
+                    "NEST",
+                    "SpiNNaker",
+                    "BrainScaleS",
+                    "Spikey"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} SingleMaxFreqToGroup 1",
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 33
+                    }
+                },
+                "name": "Single Chip",
+                "target": [
+                    "NEST",
+                    "SpiNNaker",
+                    "BrainScaleS",
+                    "Spikey"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} SingleMaxFreqToGroup 2",
+                "name": "Small System",
+                "target": [
+                    "NEST",
+                    "SpiNNaker"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} SingleMaxFreqToGroup 3",
+                "name": "Large System",
+                "target": [
+                    "SpiNNaker"
+                ]
+            }
+        ]
+    },
+    {
+        "model": {
+            "description": "Similar to the benchmark before, this SNAB measures the bandwidth between neuron populations. Now, the input population firing at maximal frequency consist of the same number of neurons as the target population. The populations are connected via a OneToOne-Connector.",
+            "name": "GroupMaxFreqToGroup"
+        },
+        "tasks": [
+            {
+                "command": "benchmark.py {system} GroupMaxFreqToGroup 0",
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 33
+                    }
+                },
+                "name": "Single Core/Smallest Network",
+                "target": [
+                    "NEST",
+                    "SpiNNaker",
+                    "BrainScaleS",
+                    "Spikey"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} GroupMaxFreqToGroup 1",
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 33
+                    }
+                },
+                "name": "Single Chip",
+                "target": [
+                    "NEST",
+                    "SpiNNaker",
+                    "BrainScaleS",
+                    "Spikey"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} GroupMaxFreqToGroup 2",
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 33
+                    }
+                },
+                "name": "Small System",
+                "target": [
+                    "NEST",
+                    "SpiNNaker",
+                    "BrainScaleS"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} GroupMaxFreqToGroup 3",
+                "name": "Large System",
+                "target": [
+                    "SpiNNaker"
+                ]
+            }
+        ]
+    },
+    {
+        "model": {
+            "description": "Identical to GroupMaxFreqToGroup, but using the AllToAll connector and allowing different number of input neurons",
+            "name": "GroupMaxFreqToGroupAllToAll"
+        },
+        "tasks": [
+            {
+                "command": "benchmark.py {system} GroupMaxFreqToGroupAllToAll 0",
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 33
+                    }
+                },
+                "name": "Single Core/Smallest Network",
+                "target": [
+                    "NEST",
+                    "SpiNNaker",
+                    "BrainScaleS",
+                    "Spikey"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} GroupMaxFreqToGroupAllToAll 1",
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 33
+                    }
+                },
+                "name": "Single Chip",
+                "target": [
+                    "NEST",
+                    "SpiNNaker",
+                    "BrainScaleS"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} GroupMaxFreqToGroupAllToAll 2",
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 33
+                    }
+                },
+                "name": "Small System",
+                "target": [
+                    "NEST",
+                    "SpiNNaker",
+                    "BrainScaleS"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} GroupMaxFreqToGroupAllToAll 3",
+                "name": "Large System",
+                "target": [
+                    "SpiNNaker"
+                ]
+            }
+        ]
+    },
+    {
+        "model": {
+            "description": "Identical to GroupMaxFreqToGroup, but using the FixedProbability connector and allowing different number of input neurons",
+            "name": "GroupMaxFreqToGroupProb"
+        },
+        "tasks": [
+            {
+                "command": "benchmark.py {system} GroupMaxFreqToGroupProb 0",
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 33
+                    }
+                },
+                "name": "Single Core/Smallest Network",
+                "target": [
+                    "NEST",
+                    "SpiNNaker",
+                    "BrainScaleS",
+                    "Spikey"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} GroupMaxFreqToGroupProb 1",
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 33
+                    }
+                },
+                "name": "Single Chip",
+                "target": [
+                    "NEST",
+                    "SpiNNaker",
+                    "BrainScaleS"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} GroupMaxFreqToGroupProb 2",
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 33
+                    }
+                },
+                "name": "Small System",
+                "target": [
+                    "NEST",
+                    "SpiNNaker",
+                    "BrainScaleS"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} GroupMaxFreqToGroupProb 3",
+                "name": "Large System",
+                "target": [
+                    "SpiNNaker"
+                ]
+            }
+        ]
+    },
+    {
+        "model": {
+            "description": "",
+            "name": "SetupTimeOneToOne"
+        },
+        "tasks": [
+            {
+                "command": "benchmark.py {system} SetupTimeOneToOne 0",
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 33
+                    }
+                },
+                "name": "Single Core/Smallest Network",
+                "target": [
+                    "NEST",
+                    "SpiNNaker",
+                    "BrainScaleS",
+                    "Spikey"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} SetupTimeOneToOne 1",
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 33
+                    }
+                },
+                "name": "Single Chip",
+                "target": [
+                    "NEST",
+                    "SpiNNaker",
+                    "BrainScaleS",
+                    "Spikey"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} SetupTimeOneToOne 2",
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 33
+                    }
+                },
+                "name": "Small System",
+                "target": [
+                    "NEST",
+                    "SpiNNaker",
+                    "BrainScaleS"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} SetupTimeOneToOne 3",
+                "name": "Large System",
+                "target": [
+                    "SpiNNaker"
+                ]
+            }
+        ]
+    },
+    {
+        "model": {
+            "description": "",
+            "name": "SetupTimeAllToAll"
+        },
+        "tasks": [
+            {
+                "command": "benchmark.py {system} SetupTimeAllToAll 0",
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 33
+                    }
+                },
+                "name": "Single Core/Smallest Network",
+                "target": [
+                    "NEST",
+                    "SpiNNaker",
+                    "BrainScaleS",
+                    "Spikey"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} SetupTimeAllToAll 1",
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 33
+                    }
+                },
+                "name": "Single Chip",
+                "target": [
+                    "NEST",
+                    "SpiNNaker",
+                    "BrainScaleS",
+                    "Spikey"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} SetupTimeAllToAll 2",
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 33
+                    }
+                },
+                "name": "Small System",
+                "target": [
+                    "NEST",
+                    "SpiNNaker",
+                    "BrainScaleS"
+                ]
+            }
+        ]
+    },
+    {
+        "model": {
+            "description": "",
+            "name": "SetupTimeRandom"
+        },
+        "tasks": [
+            {
+                "command": "benchmark.py {system} SetupTimeRandom 0",
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 33
+                    }
+                },
+                "name": "Single Core/Smallest Network",
+                "target": [
+                    "NEST",
+                    "SpiNNaker",
+                    "BrainScaleS",
+                    "Spikey"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} SetupTimeRandom 1",
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 33
+                    }
+                },
+                "name": "Single Chip",
+                "target": [
+                    "NEST",
+                    "SpiNNaker",
+                    "BrainScaleS",
+                    "Spikey"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} SetupTimeRandom 2",
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 33
+                    }
+                },
+                "name": "Small System",
+                "target": [
+                    "NEST",
+                    "SpiNNaker",
+                    "BrainScaleS"
+                ]
+            }
+        ]
+    },
+    {
+        "model": {
+            "description": "This SNAB looks at the voltage trace of a single neuron to measure the length of the refractory period. The result is the deviation from the set parameter: Negative values correspond to too short periods, positive values indicate a period which is too long.",
+            "name": "RefractoryPeriod"
+        },
+        "tasks": [
+            {
+                "command": "benchmark.py {system} RefractoryPeriod 0",
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 33
+                    }
+                },
+                "name": "Single Core/Smallest Network",
+                "target": [
+                    "NEST",
+                    "SpiNNaker",
+                    "BrainScaleS",
                     "Spikey"
                 ]
             }
         ]
-    }, 
+    },
     {
         "model": {
-            "description": "This benchmark is dedicated to compare response/activation functions of neurons in neuromorphic hardware to those from simulation. This being said, the simulation from NEST with a numerical timestep of 0.1ms and complex integrator is used as ground truth.", 
-            "name": "WeightDependentActivation"
-        }, 
+            "description": "SimpleWTA: A simple Winner-Takes-All network. Every population represents a winner, inhibition is directly between the populations.",
+            "name": "SimpleWTA"
+        },
         "tasks": [
             {
-                "command": "benchmark.py {system} WeightDependentActivation 0", 
-                "name": "Single Core/Smallest Network", 
+                "command": "benchmark.py {system} SimpleWTA 0",
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 33
+                    }
+                },
+                "name": "Single Core/Smallest Network",
                 "target": [
-                    "NEST", 
-                    "SpiNNaker"
+                    "NEST",
+                    "SpiNNaker",
+                    "BrainScaleS"
                 ]
             }
         ]
-    }, 
+    },
     {
         "model": {
-            "description": "", 
-            "name": "RateBasedWeightDependentActivation"
-        }, 
+            "description": "Lateral Inhibition Winner-Takes-All: A centered inhibitory population suppresses all Winner populations.",
+            "name": "LateralInhibWTA"
+        },
         "tasks": [
             {
-                "command": "benchmark.py {system} RateBasedWeightDependentActivation 0", 
-                "name": "Single Core/Smallest Network", 
+                "command": "benchmark.py {system} LateralInhibWTA 0",
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 33
+                    }
+                },
+                "name": "Single Core/Smallest Network",
                 "target": [
-                    "NEST", 
-                    "SpiNNaker"
+                    "NEST",
+                    "SpiNNaker",
+                    "BrainScaleS",
+                    "Spikey"
+                ]
+            }
+        ]
+    },
+    {
+        "model": {
+            "description": "All Winner populations are mirrored by an inhibitory population, which suppresses all other (besides their own) winner population.",
+            "name": "MirrorInhibWTA"
+        },
+        "tasks": [
+            {
+                "command": "benchmark.py {system} MirrorInhibWTA 0",
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 33
+                    }
+                },
+                "name": "Single Core/Smallest Network",
+                "target": [
+                    "NEST",
+                    "SpiNNaker",
+                    "BrainScaleS",
+                    "Spikey"
                 ]
             }
         ]
