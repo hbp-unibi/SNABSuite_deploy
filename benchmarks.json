@@ -30,23 +30,41 @@
         "tasks": [
             {
                 "command": "benchmark.py {system} OutputFrequencySingleNeuron2 0",
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 33
+                    }
+                },
                 "name": "Single Core/Smallest Network",
                 "target": [
-                    "NEST"
+                    "NEST",
+                    "BrainScaleS"
                 ]
             },
             {
                 "command": "benchmark.py {system} OutputFrequencySingleNeuron2 1",
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 33
+                    }
+                },
                 "name": "Single Chip",
                 "target": [
-                    "NEST"
+                    "NEST",
+                    "BrainScaleS"
                 ]
             },
             {
                 "command": "benchmark.py {system} OutputFrequencySingleNeuron2 2",
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 33
+                    }
+                },
                 "name": "Small System",
                 "target": [
-                    "NEST"
+                    "NEST",
+                    "BrainScaleS"
                 ]
             }
         ]
@@ -120,7 +138,7 @@
                 "command": "benchmark.py {system} MaxInputOneToOne 0",
                 "config": {
                     "BrainScaleS": {
-                        "WAFER_MODULE": 21
+                        "WAFER_MODULE": 33
                     }
                 },
                 "name": "Single Core/Smallest Network",
@@ -135,7 +153,7 @@
                 "command": "benchmark.py {system} MaxInputOneToOne 1",
                 "config": {
                     "BrainScaleS": {
-                        "WAFER_MODULE": 21
+                        "WAFER_MODULE": 33
                     }
                 },
                 "name": "Single Chip",
@@ -150,7 +168,7 @@
                 "command": "benchmark.py {system} MaxInputOneToOne 2",
                 "config": {
                     "BrainScaleS": {
-                        "WAFER_MODULE": 21
+                        "WAFER_MODULE": 33
                     }
                 },
                 "name": "Small System",
@@ -377,10 +395,16 @@
             },
             {
                 "command": "benchmark.py {system} SingleMaxFreqToGroup 2",
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 33
+                    }
+                },
                 "name": "Small System",
                 "target": [
                     "NEST",
-                    "SpiNNaker"
+                    "SpiNNaker",
+                    "BrainScaleS"
                 ]
             },
             {
