@@ -785,16 +785,10 @@
         "tasks": [
             {
                 "command": "benchmark.py {system} SimpleWTA 0",
-                "config": {
-                    "BrainScaleS": {
-                        "WAFER_MODULE": 33
-                    }
-                },
                 "name": "Single Core/Smallest Network",
                 "target": [
                     "NEST",
-                    "SpiNNaker",
-                    "BrainScaleS"
+                    "SpiNNaker"
                 ]
             }
         ]
@@ -807,16 +801,10 @@
         "tasks": [
             {
                 "command": "benchmark.py {system} LateralInhibWTA 0",
-                "config": {
-                    "BrainScaleS": {
-                        "WAFER_MODULE": 33
-                    }
-                },
                 "name": "Single Core/Smallest Network",
                 "target": [
                     "NEST",
                     "SpiNNaker",
-                    "BrainScaleS",
                     "Spikey"
                 ]
             }
@@ -830,16 +818,10 @@
         "tasks": [
             {
                 "command": "benchmark.py {system} MirrorInhibWTA 0",
-                "config": {
-                    "BrainScaleS": {
-                        "WAFER_MODULE": 33
-                    }
-                },
                 "name": "Single Core/Smallest Network",
                 "target": [
                     "NEST",
                     "SpiNNaker",
-                    "BrainScaleS",
                     "Spikey"
                 ]
             }
