@@ -1,6 +1,38 @@
 [
     {
         "model": {
+            "description": "This benchmark is dedicated to compare response/activation functions of neurons in neuromorphic hardware to those from simulation. This being said, the simulation from NEST with a numerical timestep of 0.1ms and complex integrator is used as ground truth.",
+            "name": "WeightDependentActivation"
+        },
+        "tasks": [
+            {
+                "command": "benchmark.py {system} WeightDependentActivation 0",
+                "name": "Single Core/Smallest Network",
+                "target": [
+                    "NEST",
+                    "SpiNNaker"
+                ]
+            }
+        ]
+    },
+    {
+        "model": {
+            "description": "",
+            "name": "RateBasedWeightDependentActivation"
+        },
+        "tasks": [
+            {
+                "command": "benchmark.py {system} RateBasedWeightDependentActivation 0",
+                "name": "Single Core/Smallest Network",
+                "target": [
+                    "NEST",
+                    "SpiNNaker"
+                ]
+            }
+        ]
+    },
+    {
+        "model": {
             "description": "This SNAB will test the maximal frequency of a single neuron by simply setting the neuron membrane reset-potential above threshold.",
             "name": "OutputFrequencySingleNeuron"
         },
