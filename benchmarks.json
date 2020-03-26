@@ -17,7 +17,7 @@
     },
     {
         "model": {
-            "description": "",
+            "description": "This benchmark is dedicated to compare response/activation functions of neurons in neuromorphic hardware to those from simulation. This being said, the simulation from NEST with a numerical timestep of 0.1ms and complex integrator is used as ground truth. Specifically, here we use rates as input to neurons",
             "name": "RateBasedWeightDependentActivation"
         },
         "tasks": [
@@ -625,7 +625,7 @@
     },
     {
         "model": {
-            "description": "",
+            "description": "This benchmark measures the setup time with a OneToOne Connector and compares the speedup to the same connection using a FromList connector",
             "name": "SetupTimeOneToOne"
         },
         "tasks": [
@@ -684,7 +684,7 @@
     },
     {
         "model": {
-            "description": "",
+            "description": "This benchmark measures the setup time with a AllToAll Connector and compares the speedup to the same connection using a FromList connector",
             "name": "SetupTimeAllToAll"
         },
         "tasks": [
@@ -736,7 +736,7 @@
     },
     {
         "model": {
-            "description": "",
+            "description": "This benchmark measures the setup time with a Random Connector and compares the speedup to the same connection using a FromList connector",
             "name": "SetupTimeRandom"
         },
         "tasks": [
@@ -855,6 +855,232 @@
                     "NEST",
                     "SpiNNaker",
                     "Spikey"
+                ]
+            }
+        ]
+    },
+    {
+        "model": {
+            "description": "A simple feed-forward network with densely connected layers. This network has 89x100x10 layout with images downscales by 3x3 average pooling and no inhibition",
+            "name": "MnistSpikey"
+        },
+        "tasks": [
+            {
+                "command": "benchmark.py {system} MnistSpikey 0",
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 33
+                    }
+                },
+                "name": "Single Core/Smallest Network",
+                "target": [
+                    "NEST",
+                    "SpiNNaker",
+                    "BrainScaleS"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} MnistSpikey 1",
+                "name": "Single Chip",
+                "target": [
+                    "NEST",
+                    "SpiNNaker"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} MnistSpikey 2",
+                "name": "Small System",
+                "target": [
+                    "NEST",
+                    "SpiNNaker"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} MnistSpikey 3",
+                "name": "Large System",
+                "target": [
+                    "NEST",
+                    "SpiNNaker"
+                ]
+            }
+        ]
+    },
+    {
+        "model": {
+            "description": "A simple feed-forward network with densely connected layers. This is a network optimized by Neural Architecture Search. Layout: 784x43x10x10",
+            "name": "MnistNAS63"
+        },
+        "tasks": [
+            {
+                "command": "benchmark.py {system} MnistNAS63 0",
+                "name": "Single Core/Smallest Network",
+                "target": [
+                    "NEST",
+                    "SpiNNaker"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} MnistNAS63 1",
+                "name": "Single Chip",
+                "target": [
+                    "NEST",
+                    "SpiNNaker"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} MnistNAS63 2",
+                "name": "Small System",
+                "target": [
+                    "NEST",
+                    "SpiNNaker"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} MnistNAS63 3",
+                "name": "Large System",
+                "target": [
+                    "NEST",
+                    "SpiNNaker"
+                ]
+            }
+        ]
+    },
+    {
+        "model": {
+            "description": "A simple feed-forward network with densely connected layers. This is a network optimized by Neural Architecture Search. Layout: 784x52x35x32x10",
+            "name": "MnistNAS129"
+        },
+        "tasks": [
+            {
+                "command": "benchmark.py {system} MnistNAS129 0",
+                "name": "Single Core/Smallest Network",
+                "target": [
+                    "NEST",
+                    "SpiNNaker"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} MnistNAS129 1",
+                "name": "Single Chip",
+                "target": [
+                    "NEST",
+                    "SpiNNaker"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} MnistNAS129 2",
+                "name": "Small System",
+                "target": [
+                    "NEST",
+                    "SpiNNaker"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} MnistNAS129 3",
+                "name": "Large System",
+                "target": [
+                    "NEST",
+                    "SpiNNaker"
+                ]
+            }
+        ]
+    },
+    {
+        "model": {
+            "description": "A simple feed-forward network with densely connected layers. This is a network optimized by Neural Architecture Search. Layout: 784x866x52x35x32x10",
+            "name": "MnistNAStop"
+        },
+        "tasks": [
+            {
+                "command": "benchmark.py {system} MnistNAStop 0",
+                "name": "Single Core/Smallest Network",
+                "target": [
+                    "NEST",
+                    "SpiNNaker"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} MnistNAStop 1",
+                "name": "Single Chip",
+                "target": [
+                    "NEST",
+                    "SpiNNaker"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} MnistNAStop 2",
+                "name": "Small System",
+                "target": [
+                    "NEST",
+                    "SpiNNaker"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} MnistNAStop 3",
+                "name": "Large System",
+                "target": [
+                    "NEST",
+                    "SpiNNaker"
+                ]
+            }
+        ]
+    },
+    {
+        "model": {
+            "description": "A simple feed-forward network with densely connected layers. This is a network taken from https://github.com/dannyneil/spiking_relu_conversion Corresponding paper: Diehl et al.: M. Fast-Classifying, High-Accuracy Spiking Deep Networks Through Weight and Threshold Balancing. Layout: 784x1200x1200x10",
+            "name": "MnistDiehl"
+        },
+        "tasks": [
+            {
+                "command": "benchmark.py {system} MnistDiehl 0",
+                "name": "Single Core/Smallest Network",
+                "target": [
+                    "NEST",
+                    "SpiNNaker"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} MnistDiehl 1",
+                "name": "Single Chip",
+                "target": [
+                    "NEST",
+                    "SpiNNaker"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} MnistDiehl 2",
+                "name": "Small System",
+                "target": [
+                    "NEST",
+                    "SpiNNaker"
+                ]
+            },
+            {
+                "command": "benchmark.py {system} MnistDiehl 3",
+                "name": "Large System",
+                "target": [
+                    "NEST",
+                    "SpiNNaker"
+                ]
+            }
+        ]
+    },
+    {
+        "model": {
+            "description": "This class combines the MNIST benchmark with an hardware in the loop re-training to compensate device mismatch. Here, we train all layers",
+            "name": "MnistITL"
+        },
+        "tasks": [
+            {
+                "command": "benchmark.py {system} MnistITL 0",
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 33
+                    }
+                },
+                "name": "Single Core/Smallest Network",
+                "target": [
+                    "BrainScaleS"
                 ]
             }
         ]
