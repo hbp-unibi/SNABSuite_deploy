@@ -1087,6 +1087,21 @@
     },
     {
         "model": {
+            "description": "This class combines the MNIST benchmark with an hardware in the loop re-training to compensate device mismatch. Here, we train all layers and make use of the TTFS encoding",
+            "name": "MnistITLTTFS"
+        },
+        "tasks": [
+            {
+                "command": "benchmark.py {system} MnistITLTTFS 0",
+                "name": "Single Core/Smallest Network",
+                "target": [
+                    "Spikey"
+                ]
+            }
+        ]
+    },
+    {
+        "model": {
             "description": "A simple feed-forward network with densely connected layers. This network has 89x100x10 layout with images downscales by 3x3 average pooling and no inhibition In contrast to MnistSpikey, use TTFS encoding",
             "name": "MnistSpikeyTTFS"
         },
