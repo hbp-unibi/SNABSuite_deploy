@@ -1,5 +1,6 @@
 {
     "genn": {
+        "repeat": 10,
         "neuron_type": "IF_cond_exp",
         "neuron_params": {
             "e_rev_E": 0,
@@ -24,12 +25,13 @@
         "prob_self": 0.8,
         "prob_lat_exc": 0.8,
         "firing_rate": 80,
-	"delay": 1.0,
-	"setup": {
-		"timestep": 1.0
-	}
+        "delay": 1.0,
+        "setup": {
+            "timestep": 1.0
+        }
     },
     "nest": {
+        "repeat": 10,
         "neuron_type": "IF_cond_exp",
         "neuron_params": {
             "e_rev_E": 0,
@@ -54,6 +56,7 @@
         "firing_rate": 80
     },
     "spinnaker": {
+        "repeat": 10,
         "neuron_type": "IF_cond_exp",
         "neuron_params": {
             "e_rev_E": 0,
@@ -77,14 +80,14 @@
         "prob_inp": 0.8,
         "prob_self": 0.8,
         "prob_lat_exc": 0.8,
-        "firing_rate": 80, 
+        "firing_rate": 80,
         "delay": 1.0,
         "setup": {
-                "timestep": 1.0
+            "timestep": 1.0
         }
-
     },
     "spikey": {
+        "repeat": 10,
         "neuron_type": "IfFacetsHardware1",
         "neuron_params": {
             "tau_m": 6,
@@ -99,7 +102,7 @@
         "num_inhibitory_neurons": 15,
         "weight_inp": 0.008,
         "weight_self": 0.004,
-        "weight_lat_inh": -0.020,
+        "weight_lat_inh": -0.02,
         "weight_lat_exc": 0.002,
         "prob_inp": 0.8,
         "prob_self": 0.8,
