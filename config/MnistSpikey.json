@@ -14,17 +14,12 @@
             "cm": 0.2
         },
         "images": 10000,
-        "batchsize": [
-            10000,
-            2500,
-            500,
-            50
-        ],
+        "batchsize": [10000,2500,500,50],
         "duration": 500,
         "max_freq": 120,
         "pause": 50,
         "poisson": false,
-        "max_weight": 0.0135,
+        "max_weight": 0.01,
         "train_data": false,
         "batch_parallel": true,
         "count_spikes": false,
@@ -50,10 +45,7 @@
             "cm": 0.2
         },
         "images": 10000,
-        "batchsize": [
-            10000,
-            100
-        ],
+        "batchsize": [10000,200],
         "duration": 500,
         "max_freq": 120,
         "pause": 50,
@@ -83,12 +75,7 @@
             "cm": 0.2
         },
         "images": 10000,
-        "batchsize": [
-            10000,
-            2500,
-            480,
-            42
-        ],
+        "batchsize": [10000,2500,480,42],
         "duration": 500,
         "max_freq": 120,
         "pause": 50,
@@ -104,7 +91,6 @@
         }
     },
     "spikey": {
-        "repeat": 10,
         "neuron_type": "IfFacetsHardware1",
         "neuron_params": {
             "tau_m": 10,
@@ -131,7 +117,6 @@
         "scaled_image": true
     },
     "nmpm1": {
-        "repeat": 10,
         "setup": {
             "calib_path": "/wang/data/calibration/brainscales/current",
             "neuron_size": 8,
@@ -139,30 +124,7 @@
             "bandwidth": 0.3,
             "synapse_loss": false,
             "wafer": 33,
-            "hicann": [
-                [
-                    [
-                        320,
-                        321,
-                        340,
-                        341,
-                        296,
-                        297,
-                        298,
-                        299
-                    ],
-                    [
-                        320,
-                        321,
-                        340,
-                        341
-                    ],
-                    [
-                        322,
-                        342
-                    ]
-                ]
-            ]
+            "hicann": [[[320,321,340,341,296,297,298,299],[320,321,340,341],[322,342]]]
         },
         "neuron_type": "IF_cond_exp",
         "neuron_params": {
