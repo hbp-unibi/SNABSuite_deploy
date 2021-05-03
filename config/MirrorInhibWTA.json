@@ -1,36 +1,5 @@
 {
-    "genn": {
-        "repeat": 10,
-        "neuron_type": "IF_cond_exp",
-        "neuron_params": {
-            "e_rev_E": 0,
-            "e_rev_I": -80,
-            "v_rest": -70,
-            "v_reset": -80,
-            "v_thresh": -60,
-            "tau_syn_E": 2,
-            "tau_refrac": 1,
-            "tau_m": 1,
-            "cm": 0.2
-        },
-        "num_neurons_pop": 10,
-        "num_source_neurons": 10,
-        "num_inhibitory_neurons": 10,
-        "weight_inp": 0.01,
-        "weight_self": 0.005,
-        "weight_to_inh": 0.005,
-        "weight_from_inh": -0.005,
-        "prob_inp": 0.8,
-        "prob_self": 0.8,
-        "prob_to_inh": 0.8,
-        "firing_rate": 80,
-        "dealy": 1.0,
-        "setup": {
-            "timestep": 1.0
-        }
-    },
     "nest": {
-        "repeat": 10,
         "neuron_type": "IF_cond_exp",
         "neuron_params": {
             "e_rev_E": 0,
@@ -55,7 +24,6 @@
         "firing_rate": 80
     },
     "spinnaker": {
-        "repeat": 10,
         "neuron_type": "IF_cond_exp",
         "neuron_params": {
             "e_rev_E": 0,
@@ -71,21 +39,16 @@
         "num_neurons_pop": 10,
         "num_source_neurons": 10,
         "num_inhibitory_neurons": 10,
-        "weight_inp": 0.012,
-        "weight_self": 0.0067,
+        "weight_inp": 0.01,
+        "weight_self": 0.0084,
         "weight_to_inh": 0.005,
         "weight_from_inh": -0.005,
         "prob_inp": 0.8,
         "prob_self": 0.8,
         "prob_to_inh": 0.8,
-        "firing_rate": 80,
-        "delay": 1.0,
-        "setup": {
-            "timestep": 1.0
-        }
+        "firing_rate": 80
     },
     "spikey": {
-        "repeat": 10,
         "neuron_type": "IfFacetsHardware1",
         "neuron_params": {
             "tau_m": 6,
@@ -98,9 +61,9 @@
         "num_neurons_pop": 20,
         "num_source_neurons": 10,
         "num_inhibitory_neurons": 15,
-        "weight_inp": 0.006,
-        "weight_self": 0.002,
-        "weight_from_inh": -0.02,
+        "weight_inp": 0.002,
+        "weight_self": 0.001,
+        "weight_from_inh": -0.015,
         "weight_to_inh": 0.001,
         "prob_inp": 0.9,
         "prob_self": 0.5,
