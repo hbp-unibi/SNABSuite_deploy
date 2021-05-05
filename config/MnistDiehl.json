@@ -14,7 +14,12 @@
             "cm": 0.2
         },
         "images": 10000,
-        "batchsize": [10000,10000,2500,190],
+        "batchsize": [
+            10000,
+            10000,
+            2500,
+            190
+        ],
         "duration": 500,
         "max_freq": 120,
         "pause": 50,
@@ -45,7 +50,10 @@
             "cm": 0.2
         },
         "images": 10000,
-        "batchsize": [10000,500],
+        "batchsize": [
+            10000,
+            280
+        ],
         "duration": 500,
         "max_freq": 120,
         "pause": 50,
@@ -61,6 +69,12 @@
         }
     },
     "spinnaker": {
+        "invalid": [
+            false,
+            true,
+            false,
+            false
+        ],
         "neuron_type": "IF_cond_exp",
         "neuron_params": {
             "e_rev_E": 0,
@@ -75,7 +89,12 @@
             "cm": 0.2
         },
         "images": 10000,
-        "batchsize": [10000,10000,2500,190],
+        "batchsize": [
+            10000,
+            10000,
+            2500,
+            190
+        ],
         "duration": 500,
         "max_freq": 120,
         "pause": 50,
@@ -88,8 +107,18 @@
         "scaled_image": false,
         "setup": {
             "timestep": 1,
-            "neurons_per_core": [180,180,180,200],
-            "time_scale_factor": [2,2,2,1]
+            "neurons_per_core": [
+                180,
+                180,
+                200,
+                200
+            ],
+            "time_scale_factor": [
+                2,
+                2,
+                2,
+                1
+            ]
         }
     },
     "spikey": {
