@@ -6,6 +6,7 @@
         "invalid": true
     },
     "genn": {
+        "invalid": true,
         "neuron_type": "IF_cond_exp",
         "neuron_params": {
             "e_rev_E": 0,
@@ -38,7 +39,10 @@
         "loss_function": "CatHinge",
         "num_test_images": 10000,
         "test_batchsize": 10000,
-        "random_init": false
+        "random_init": false,
+        "setup": {
+            "keep_compile" : true
+        }
     },
     "spikey": {
         "neuron_type": "IfFacetsHardware1",
@@ -60,7 +64,7 @@
         "train_data": false,
         "batch_parallel": false,
         "learn_rate": 0.02,
-        "epochs": 5,
+        "epochs": 2,
         "positive": true,
         "dnn_file": "networks/netw_spikey.msgpack",
         "scaled_image": true,
@@ -81,9 +85,32 @@
             "bandwidth": 0.3,
             "synapse_loss": false,
             "keep_mapping": true,
-            "full_list_connect":false,
+            "full_list_connect": false,
             "wafer": 33,
-            "hicann": [[[320,321,340,341,296,297,298,299],[320,321,340,341],[322,342]]]
+            "hicann": [
+                [
+                    [
+                        320,
+                        321,
+                        340,
+                        341,
+                        296,
+                        297,
+                        298,
+                        299
+                    ],
+                    [
+                        320,
+                        321,
+                        340,
+                        341
+                    ],
+                    [
+                        322,
+                        342
+                    ]
+                ]
+            ]
         },
         "neuron_type": "IF_cond_exp",
         "neuron_params": {
@@ -116,8 +143,8 @@
         "norm_rate_last": 5,
         "loss_function": "CatHinge",
         "num_test_images": 10000,
-        "test_batchsize" : 10000,
+        "test_batchsize": 10000,
         "random_init": false,
-        "count_spikes" : true
+        "count_spikes": true
     }
 }
