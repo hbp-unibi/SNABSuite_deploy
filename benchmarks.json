@@ -1,7 +1,7 @@
 [
     {
         "model": {
-            "description": "Simplest, straight forward method to solve a Sudoku with SNNs. Solves a single SNN using a WTA network.",
+            "description": "Simplest, straight forward method to solve a Sudoku with SNNs. Solves a single Sudoku using a WTA network.",
             "name": "SpikingSudoku"
         },
         "tasks": [
@@ -29,7 +29,7 @@
     },
     {
         "model": {
-            "description": "Identical to SpikingSudoku. However, the network structure is defined in a different way, using only a single population and two connectors. Meant to improve speed on spinnaker + GeNN. ",
+            "description": "Identical to SpikingSudoku. However, the network structure is defined in a different way, using only a single population and two connectors. Meant to improve speed on SpiNNaker and GeNN. ",
             "name": "SpikingSudokuSinglePop"
         },
         "tasks": [
@@ -115,7 +115,7 @@
     },
     {
         "model": {
-            "description": "This benchmark is dedicated to compare response/activation functions of neurons in neuromorphic hardware to those from simulation. This being said, the simulation from NEST with a numerical timestep of 0.1ms and complex integrator is used as ground truth. Specifically, here we use rates as input to neurons",
+            "description": "This benchmark is dedicated to comparing response/activation functions of neurons in neuromorphic hardware to those from simulation. This being said, the simulation from NEST with a numerical timestep of 0.1ms and complex integrator is used as ground truth. Here, we use rates as input to neurons",
             "name": "RateBasedWeightDependentActivation"
         },
         "tasks": [
@@ -195,7 +195,7 @@
     },
     {
         "model": {
-            "description": "This SNAB will test the maximal frequency of a single neuron by simply setting the neuron membrane reset-potential above threshold.",
+            "description": "This SNAB will test the maximal frequency of a single neuron by simply setting the neuron membrane reset-/resting-potential above threshold.",
             "name": "OutputFrequencySingleNeuron"
         },
         "tasks": [
@@ -218,7 +218,7 @@
     },
     {
         "model": {
-            "description": "This SNAB will test the maximal frequency of a single neuron by simply setting the neuron membrane reset-potential above threshold. Although, spikes are only recorded for a single neuron, multiple neurons are simulated",
+            "description": "This SNAB will test the maximal frequency of a single neuron by simply setting the neuron membrane reset-/resting-potential above threshold. Although, spikes are only recorded for a single neuron, multiple neurons are simulated",
             "name": "OutputFrequencySingleNeuron2"
         },
         "tasks": [
@@ -277,7 +277,7 @@
     },
     {
         "model": {
-            "description": "Here we do a similar test as in OutputFrequencySingleNeurons, but now we increase the number of neurons used. We look at averages over neurons instead of the average of a single neuron. This will show possible shortcuts in communication infrastructure of neuron-nhips to the outer world",
+            "description": "Here we do a similar test as in OutputFrequencySingleNeurons, but now we increase the number of neurons used. We look at averages over neurons instead of the average of a single neuron. This will show possible shortcuts in communication infrastructure of neuron-chips to the outer world",
             "name": "OutputFrequencyMultipleNeurons"
         },
         "tasks": [
@@ -342,7 +342,7 @@
     },
     {
         "model": {
-            "description": "Check the input bandwidth by injecting spikes per one to one connection. Check if output neurons spike accordingly",
+            "description": "Check the input bandwidth by injecting spikes per OneToOne connection. Check if output neurons spike accordingly",
             "name": "MaxInputOneToOne"
         },
         "tasks": [
@@ -407,7 +407,7 @@
     },
     {
         "model": {
-            "description": "Check the input bandwidth by injecting spikes per all to all connection. Check if output neurons spike accordingly",
+            "description": "Check the input bandwidth by injecting spikes per AllToAll connection. Check if output neurons spike accordingly",
             "name": "MaxInputAllToAll"
         },
         "tasks": [
@@ -472,7 +472,7 @@
     },
     {
         "model": {
-            "description": "Check the input bandwidth by injecting spikes per fixed fan out connection. Check if output neurons spike accordingly",
+            "description": "Check the input bandwidth by injecting spikes per FixedFanOut connection. Check if output neurons spike accordingly",
             "name": "MaxInputFixedOutConnector"
         },
         "tasks": [
@@ -537,7 +537,7 @@
     },
     {
         "model": {
-            "description": "Check the input bandwidth by injecting spikes per fixed fan out connection. Check if output neurons spike accordingly",
+            "description": "Check the input bandwidth by injecting spikes per FixedFanIn connection. Check if output neurons spike accordingly",
             "name": "MaxInputFixedInConnector"
         },
         "tasks": [
@@ -927,7 +927,7 @@
     },
     {
         "model": {
-            "description": "Similar to the benchmark before, this SNAB measures the bandwidth between neuron populations. Now, the input population firing at maximal frequency consist of the same number of neurons as the target population. The populations are connected via a OneToOne-Connector.",
+            "description": "Similar to the benchmark before, this SNAB measures the bandwidth between neuron populations. Here, the input population firing at maximal frequency consists of the same number of neurons as the target population. The populations are connected via a OneToOne-Connector.",
             "name": "GroupMaxFreqToGroup"
         },
         "tasks": [
@@ -992,7 +992,7 @@
     },
     {
         "model": {
-            "description": "Identical to GroupMaxFreqToGroup, but using the AllToAll connector and allowing different number of input neurons",
+            "description": "Identical to GroupMaxFreqToGroup, but using the AllToAll connector and allowing different numbers for input and target populations",
             "name": "GroupMaxFreqToGroupAllToAll"
         },
         "tasks": [
@@ -1056,7 +1056,7 @@
     },
     {
         "model": {
-            "description": "Identical to GroupMaxFreqToGroup, but using the FixedProbability connector and allowing different number of input neurons",
+            "description": "Identical to GroupMaxFreqToGroup, but using the FixedProbability connector and allowing different number for input and target populations",
             "name": "GroupMaxFreqToGroupProb"
         },
         "tasks": [
@@ -1121,7 +1121,7 @@
     },
     {
         "model": {
-            "description": "This benchmark measures the setup time with a OneToOne Connector and compares the speedup to the same connection using a FromList connector",
+            "description": "This benchmark measures the setup time with a OneToOne connector and compares the speedup to the same connection using a FromList connector",
             "name": "SetupTimeOneToOne"
         },
         "tasks": [
@@ -1186,7 +1186,7 @@
     },
     {
         "model": {
-            "description": "This benchmark measures the setup time with a AllToAll Connector and compares the speedup to the same connection using a FromList connector",
+            "description": "This benchmark measures the setup time with a AllToAll connector and compares the speedup to the same connection using a FromList connector",
             "name": "SetupTimeAllToAll"
         },
         "tasks": [
@@ -1245,7 +1245,7 @@
     },
     {
         "model": {
-            "description": "This benchmark measures the setup time with a Random Connector and compares the speedup to the same connection using a FromList connector",
+            "description": "This benchmark measures the setup time with a Random connector and compares the speedup to the same connection using a FromList connector",
             "name": "SetupTimeRandom"
         },
         "tasks": [
@@ -1327,7 +1327,7 @@
     },
     {
         "model": {
-            "description": "SimpleWTA: A simple Winner-Takes-All network. Every population represents a winner, inhibition is directly between the populations.",
+            "description": "Simple Winner-Takes-All: A simple WTA network. Every population represents a winner, inhibition is directly between the populations.",
             "name": "SimpleWTA"
         },
         "tasks": [
@@ -1418,7 +1418,7 @@
     },
     {
         "model": {
-            "description": "Implements the mapping part of Simultaneous Localization and Mapping: a 2D robot navigates in a virtual environment. A bumper sensor is triggered whenever the robot touches a wall or obstacle. The internal map of the surrounding is built using STDP.",
+            "description": "Implements the mapping part of Simultaneous Localization and Mapping: a 2D robot navigates in a virtual environment. A bumper sensor is triggered whenever the robot touches a wall or obstacle. The internal map of the surroundings is built using STDP.",
             "name": "SpikingSlam"
         },
         "tasks": [
@@ -1434,7 +1434,7 @@
     },
     {
         "model": {
-            "description": "A simple feed-forward network with densely connected layers. This network has 89x100x10 layout with images downscales by 3x3 average pooling and no inhibition",
+            "description": "A simple feed-forward network with densely connected layers. This network has 89 x 100 x 10 layout with images downscaled by 3x3 average pooling and no inhibition",
             "name": "MnistSpikey"
         },
         "tasks": [
@@ -1481,7 +1481,7 @@
     },
     {
         "model": {
-            "description": "A simple feed-forward network with densely connected layers. This is a network optimized by Neural Architecture Search. Layout: 784x43x10x10",
+            "description": "A simple feed-forward network with densely connected layers. This is a network optimized by Neural Architecture Search. Layout: 784 x 43 x 10 x 10",
             "name": "MnistNAS63"
         },
         "tasks": [
@@ -1521,7 +1521,7 @@
     },
     {
         "model": {
-            "description": "A simple feed-forward network with densely connected layers. This is a network optimized by Neural Architecture Search. Layout: 784x52x35x32x10",
+            "description": "A simple feed-forward network with densely connected layers. This is a network optimized by Neural Architecture Search. Layout: 784 x 52 x 35 x 32 x 10",
             "name": "MnistNAS129"
         },
         "tasks": [
@@ -1561,7 +1561,7 @@
     },
     {
         "model": {
-            "description": "A simple feed-forward network with densely connected layers. This is a network optimized by Neural Architecture Search. Layout: 784x866x52x35x32x10",
+            "description": "A simple feed-forward network with densely connected layers. This is a network optimized by Neural Architecture Search. Layout: 784 x 866 x 52 x 35 x 32 x 10",
             "name": "MnistNAStop"
         },
         "tasks": [
@@ -1601,7 +1601,7 @@
     },
     {
         "model": {
-            "description": "A simple feed-forward network with densely connected layers. This is a network taken from https://github.com/dannyneil/spiking_relu_conversion Corresponding paper: Diehl et al.: M. Fast-Classifying, High-Accuracy Spiking Deep Networks Through Weight and Threshold Balancing. Layout: 784x1200x1200x10",
+            "description": "A simple feed-forward network with densely connected layers. This is a network taken from https://github.com/dannyneil/spiking_relu_conversion. Corresponding paper: Diehl et al.: M. Fast-Classifying, High-Accuracy Spiking Deep Networks Through Weight and Threshold Balancing. Layout: 784 x 1200 x 1200 x 10",
             "name": "MnistDiehl"
         },
         "tasks": [
@@ -1658,7 +1658,7 @@
     },
     {
         "model": {
-            "description": "A simple feed-forward network with densely connected layers. This network has 89x100x10 layout with images downscales by 3x3 average pooling and no inhibition In contrast to MnistSpikey, use TTFS encoding",
+            "description": "A simple feed-forward network with densely connected layers. This network has 89 x 100 x 10 layout with images downscaled by 3x3 average pooling and no inhibition. In contrast to MnistSpikey, this SNAB uses TTFS encoding.",
             "name": "MnistSpikeyTTFS"
         },
         "tasks": [
@@ -1699,7 +1699,7 @@
     },
     {
         "model": {
-            "description": "A simple feed-forward network with densely connected layers. This is a network taken from https://github.com/dannyneil/spiking_relu_conversion Corresponding paper: Diehl et al.: M. Fast-Classifying, High-Accuracy Spiking Deep Networks Through Weight and Threshold Balancing. Layout: 784x1200x1200x10 In contrast to MnistDiehl, use TTFS encoding",
+            "description": "A simple feed-forward network with densely connected layers. This is a network taken from https://github.com/dannyneil/spiking_relu_conversion Corresponding paper: Diehl et al.: M. Fast-Classifying, High-Accuracy Spiking Deep Networks Through Weight and Threshold Balancing. Layout: 784 x 1200 x 1200 x 10. In contrast to MnistDiehl, this SNAB uses TTFS encoding.",
             "name": "MnistDiehlTTFS"
         },
         "tasks": [
