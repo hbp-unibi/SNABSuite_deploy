@@ -121,10 +121,16 @@
         "tasks": [
             {
                 "command": "benchmark.py {system} RateBasedWeightDependentActivation 0",
+                "config": {
+                    "BrainScaleS": {
+                        "WAFER_MODULE": 33
+                    }
+                },
                 "name": "Single Core/Smallest Network",
                 "target": [
                     "NEST",
                     "SpiNNaker",
+                    "BrainScaleS",
                     "Spikey"
                 ]
             }
